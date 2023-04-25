@@ -8,10 +8,10 @@ object Implicits extends App {
   private val mass = 50.0
   private val height = 20.0
 
-  println( energy.calculatePotentialEnergy(mass, height))
-
+  println(energy.calculatePotentialEnergy(mass, height))
 }
-class PotentialEnergy{
+
+class PotentialEnergy {
   def calculatePotentialEnergy(mass: Double, height: Double)(implicit gravity: Double): Double = {
     mass * height * gravity
   }

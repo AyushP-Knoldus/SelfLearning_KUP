@@ -1,6 +1,6 @@
 package com.knoldus
 
-object TypeParameterization extends App{
+object TypeParameterization extends App {
 
   private val printObject1 = new PrintNTimes[String]
   printObject1.printValue("hello", 3)
@@ -14,7 +14,7 @@ object TypeParameterization extends App{
   private val dog = Animal("Dog", "Domestic")
 
   private val printObject4 = new PrintNTimes[Animal]
-  printObject4.printValue(dog,3)
+  printObject4.printValue(dog, 3)
 
 }
 
@@ -24,7 +24,7 @@ case class Animal(name: String, animalType: String)
 class PrintNTimes[A] {
 
   def printValue(value: A, number: Int): Unit = {
-    if(number <= 0)  print("")
+    if (number <= 0) print("")
     else {
       println(value)
       printValue(value, number - 1)

@@ -13,24 +13,26 @@ object FuturesPractise extends App {
   }
   println(aFuture.value)
 
-  Await.ready(aFuture,1.seconds)
+  Await.ready(aFuture, 1.seconds)
   aFuture.onComplete {
     case Success(value) => println(value)
     case Failure(exception) => println(exception)
   }
 
-  private val secondFuture=Future{
+  private val secondFuture = Future {
     throw new Exception("Future failed")
   }
-  secondFuture.recover{
+
+  secondFuture.recover {
     case exception: Exception => println(exception)
   }
 
-  val number=5
+  val number = 5
   computeFactorial(number).onComplete {
     case Success(value) => println(value)
     case Failure(exception) => println(exception)
   }
+
   private def computeFactorial(number: Int): Future[Int] = {
     Future {
       @tailrec

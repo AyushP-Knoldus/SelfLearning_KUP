@@ -9,6 +9,7 @@ object PartialFunctions extends App {
   }
   println(squareRoot(9))
   println(squareRoot.isDefinedAt(-1))
+
   //Other approach
   private val squareRootOther: PartialFunction[Double, Double] = {
     case d: Double if d > 0 => Math.sqrt(d)
@@ -24,6 +25,7 @@ object PartialFunctions extends App {
     case marks if marks >= 80 && marks <= 100 => "A"
   }
   private val marks: List[Int] = List(10, 91, 75, 75, 22, 0, 100)
+
   //  println(marks.collect(gradeE))
   println(marks.map(GradeCalculator))
 }
