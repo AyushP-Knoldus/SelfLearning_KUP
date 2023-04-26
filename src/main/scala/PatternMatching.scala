@@ -6,7 +6,7 @@ object PatternMatching extends App {
   println(patternMatchingTypes.constantPattern())
   println(patternMatchingTypes.variablePattern(51))
   println(patternMatchingTypes.constructorPattern(Student("Rahul", 12, 'B')))
-  println(patternMatchingTypes.sequencePattern(List(2, 5, 8, 9, 10)))
+  println(patternMatchingTypes.sequencePattern(List(2, 8, 8)))
   println(patternMatchingTypes.tuplePattern("Ayush", 12, 'A'))
   println(patternMatchingTypes.typedPattern(12.3))
 }
